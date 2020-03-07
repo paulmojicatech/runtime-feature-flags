@@ -1,0 +1,12 @@
+.row {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    
+    .column {
+        display: flex;
+        flex-direction: column;
+        margin: .5rem;
+    };
+}

@@ -1,0 +1,11 @@
+<div [formGroup]="form" class="row">
+    <div class="column">
+        <mat-form-field>
+            <input formControlName="Login" placeholder="User" type="text" matInput />
+        </mat-form-field>
+    </div>
+    <div class="column">
+        <button mat-raised-button color="primary" (click)="login()" class="column">Login</button>
+    </div>
+    
+</div>
