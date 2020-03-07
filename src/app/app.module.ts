@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { ROOT_ROUTES } from './app.routes';
+import { StoreService } from './state/store.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { ROOT_ROUTES } from './app.routes';
     ReactiveFormsModule,
     RouterModule.forRoot(ROOT_ROUTES)
   ],
-  providers: [],
+  providers: [
+    StoreService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
