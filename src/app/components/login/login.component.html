@@ -1,7 +1,10 @@
 <div [formGroup]="form" class="row">
     <div class="column">
         <mat-form-field>
-            <input formControlName="Login" placeholder="User" type="text" matInput />
+            <mat-label>Login</mat-label>
+            <mat-select formControlName="Login" placeholder="User">
+                <mat-option *ngFor="let user of allUsers" [value]="user">{{user}}</mat-option>
+            </mat-select>   
         </mat-form-field>
     </div>
     <div class="column">

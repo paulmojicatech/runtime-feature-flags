@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="header-container">
+        Welcome {{ user?.name }}
+        <button class="logout-button" mat-button (click)="logout()">Logout</button>
+    </div>
+    <div class="content-container">
+        <div class="no-features" *ngIf="!user?.featureFlags?.length">
+            <label>No Material Design</label>
+            <input type="text" />
+        </div>
+        <div class="feature-a" *ngIf="hasFeatureFlag('featureA')">
+            <app-feature-a [form]="form" [controlName]="'Feature A'"></app-feature-a>
+        </div>
+        <div class="feature-b" *ngIf="hasFeatureFlag('featureB')">
+            <app-feature-b [form]="form" [controlName]="'Feature B'"></app-feature-b>
+        </div>
+    
+    </div>
+</div>
+
+
+
