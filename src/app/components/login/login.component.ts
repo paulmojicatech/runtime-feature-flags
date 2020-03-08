@@ -14,7 +14,7 @@ import { Observable } from 'rxjs';
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
-  allUsers$: Observable<string[]>  
+  allUsers: string[];
 
   constructor(private _fb: FormBuilder, private _authService: AuthService, private _router: Router) { }
 
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
       'Login': new FormControl()
     });
 
-    this.allUsers$ = this._authService.getAuthUsers();
+    this.allUsers = this._authService.getAuthUsers();
   }
 
   login(): void {

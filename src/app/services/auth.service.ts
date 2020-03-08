@@ -27,7 +27,7 @@ export class AuthService {
     this._store.updateState({user});
   }
 
-  getAuthUsers(): Observable<string[]> {
-    return of([ 'old', 'featureA', 'featureB', 'allFeatures' ]);
+  getAuthUsers(): string[] {
+    return [ 'old', 'featureA', 'featureB', 'allFeatures' ];
   }
 }

@@ -1,0 +1,7 @@
+<mat-form-field>
+    <mat-label>{{controlName}}</mat-label>
+    <input matInput type="text" [matAutocomplete]="auto" [formControl]="formControl" />
+    <mat-autocomplete #auto>
+        <mat-option *ngFor="let user of (allUsers$ | async)">{{user}}</mat-option>
+    </mat-autocomplete>
+</mat-form-field>

@@ -2,9 +2,9 @@
     <div class="column">
         <mat-form-field>
             <mat-label>Login</mat-label>
-            <select formControlName="Login" placeholder="User" matSelect>
-                <option *ngFor="let user of (allUsers$ | async)" [value]="user.name">{{user.name}}</option>
-            </select>   
+            <mat-select formControlName="Login" placeholder="User">
+                <mat-option *ngFor="let user of allUsers" [value]="user">{{user}}</mat-option>
+            </mat-select>   
         </mat-form-field>
     </div>
     <div class="column">
