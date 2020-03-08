@@ -33,7 +33,7 @@ export class AuthGuardService implements OnInit, CanActivate {
 
   checkLogin(): boolean {
     if (!!this.userToken && !!this.userToken.name) {
-      this._router.navigateByUrl('');
+      this._router.navigate(['home']);
       return true;
     } else {
       this._router.navigateByUrl('login');

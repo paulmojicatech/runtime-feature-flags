@@ -9,14 +9,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 import { RouterModule } from '@angular/router';
 import { ROOT_ROUTES } from './app.routes';
 import { StoreService } from './state/store.service';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +27,7 @@ import { StoreService } from './state/store.service';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatSelectModule,
     ReactiveFormsModule,
     RouterModule.forRoot(ROOT_ROUTES)
   ],

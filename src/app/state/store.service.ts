@@ -15,8 +15,9 @@ export class StoreService {
     }
   };
 
-  private currentStateSubject$: Subject<StateStore> = new Subject<StateStore>(); 
+  private currentUser: User;
 
+  private currentStateSubject$: Subject<StateStore> = new Subject<StateStore>(); 
   constructor() {
     this.currentStateSubject$.next(this.currentState);
    }
@@ -30,12 +31,17 @@ export class StoreService {
     );
   }
 
+  getCurrentUser(): User {
+    return this.currentUser;
+  }
+
   updateState(newState: StateStore): void {
     let updatedState = Object.assign(this.currentState);
     Object.keys(newState).forEach(key => {
       switch (key) {
         case 'user':
           const user = newState[key];
+          this.currentUser = user; // done because no memoization
           updatedState = {...updatedState, user};
           break;
         default:
